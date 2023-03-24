@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using MarsFramework.Global;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace MarsFramework.Pages
@@ -51,8 +52,8 @@ namespace MarsFramework.Pages
         private IWebElement EndDateDropDown { get; set; }
 
         //Storing the table of available days
-        [FindsBy(How = How.XPath, Using = "//body/div/div/div[@id='service-listing-section']/div[@class='ui container']/div[@class='listing']/form[@class='ui form']/div[7]/div[2]/div[1]")]
-        private IWebElement Days { get; set; }
+        //[FindsBy(How = How.XPath, Using = "//body/div/div/div[@id='service-listing-section']/div[@class='ui container']/div[@class='listing']/form[@class='ui form']/div[7]/div[2]/div[1]")]
+        //private IWebElement Days { get; set; }
 
         //Storing the starttime
         [FindsBy(How = How.XPath, Using = "//div[3]/div[2]/input[1]")]
@@ -88,7 +89,8 @@ namespace MarsFramework.Pages
 
         internal void EnterShareSkill()
         {
-
+            //Populate the Excel Sheet
+            GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
         }
 
         internal void EditShareSkill()

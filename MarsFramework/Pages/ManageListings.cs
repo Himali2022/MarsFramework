@@ -35,8 +35,7 @@ namespace MarsFramework.Pages
         {
             //Populate the Excel Sheet
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ManageListings");
-
-
+            
         }
     }
 }

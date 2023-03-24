@@ -122,7 +122,7 @@
     <comment>1 for firefox and 2 for Chrome</comment>
   </data>
   <data name="ExcelPath" xml:space="preserve">
-    <value>your path</value>
+    <value>"C:\Users\himal\Competition Task\Mars Framework\MarsFramework\ExcelData\Test data Share Skill.xlsx"</value>
   </data>
   <data name="IsLogin" xml:space="preserve">
     <value>true</value>
@@ -135,6 +135,6 @@
     <value>your path</value>
   </data>
   <data name="ScreenShotPath" xml:space="preserve">
-    <value>your path</value>
+    <value>"C:\Users\himal\Competition Task\Mars Framework\MarsFramework\TestReports\Screenshots"</value>
   </data>
 </root>

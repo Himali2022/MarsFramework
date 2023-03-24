@@ -67,7 +67,7 @@ namespace MarsFramework.Global
         public void TearDown()
         {
             // Screenshot
-            String img = SaveScreenShotClass.SaveScreenshot(GlobalDefinitions.driver, "Report");//AddScreenCapture(@"E:\Dropbox\VisualStudio\Projects\Beehive\TestReports\ScreenShots\");
+            String img = SaveScreenShotClass.SaveScreenshot(GlobalDefinitions.driver, "Report"); //Add screen capture (@"C:\Users\himal\Competition Task\Mars Framework\MarsFramework\TestReports\Screenshots");
             test.Log(LogStatus.Info, "Image example: " + img);
             // end test. (Reports)
             extent.EndTest(test);

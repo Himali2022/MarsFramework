@@ -1,4 +1,5 @@
 ﻿using MarsFramework.Global;
+using NUnit.Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.PageObjects;
@@ -35,8 +36,19 @@ namespace MarsFramework.Pages
         {
             //Populate the Excel Sheet
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "SignIn");
+                   
+            //Click on Sign In button
+            SignIntab.Click();
+
+            //Enter Email
+            Email.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Email"));
+
+            //Enter Password
+            Password.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Password"));
+
+            //Click on Login button to Sign In
+            LoginBtn.Click();
         }
-            
-    
+             
     }
 }

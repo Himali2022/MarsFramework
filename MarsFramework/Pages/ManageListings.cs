@@ -35,7 +35,22 @@ namespace MarsFramework.Pages
         {
             //Populate the Excel Sheet
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ManageListings");
-            
+
+            //Click on Manage Listings Link
+            manageListingsLink.Click();
+
+            //View the listing
+            view.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Title"));
+
+            //Delete the listing
+            delete.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Deleteaction"));
+
+            //Edit the listing 
+            edit.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, ""));
+
+            //Click on Yes or No
+            clickActionsButton.Click();
+
         }
     }
 }

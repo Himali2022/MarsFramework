@@ -1,6 +1,9 @@
 ﻿using MarsFramework.Global;
+using NUnit.Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System;
+using System.Security.Policy;
 
 namespace MarsFramework.Pages
 {
@@ -52,8 +55,8 @@ namespace MarsFramework.Pages
         private IWebElement EndDateDropDown { get; set; }
 
         //Storing the table of available days
-        //[FindsBy(How = How.XPath, Using = "//body/div/div/div[@id='service-listing-section']/div[@class='ui container']/div[@class='listing']/form[@class='ui form']/div[7]/div[2]/div[1]")]
-        //private IWebElement Days { get; set; }
+        [FindsBy(How = How.XPath, Using = "//body/div/div/div[@id='service-listing-section']/div[@class='ui container']/div[@class='listing']/form[@class='ui form']/div[7]/div[2]/div[1]")]
+        private IWebElement Days { get; set; }
 
         //Storing the starttime
         [FindsBy(How = How.XPath, Using = "//div[3]/div[2]/input[1]")]
@@ -91,11 +94,68 @@ namespace MarsFramework.Pages
         {
             //Populate the Excel Sheet
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ShareSkill");
+
+            //Click on Share Skill button
+            ShareSkillButton.Click();
+
+            //Enter Title
+            Title.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Title"));
+
+            //Enter Description
+            Description.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Description"));
+
+            //Select Category 
+            CategoryDropDown.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Category"));
+
+            //Select Sub Category
+            SubCategoryDropDown.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "SubCategory"));
+
+            //Enter Tags
+            Tags.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Tags"));
+
+            //Select Service Type
+            ServiceTypeOptions.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "ServiceType"));
+
+            //Select Location Type
+            LocationTypeOption.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "LocationType"));
+
+            //Enter Startdate
+            StartDateDropDown.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Startdate"));
+
+            //Enter Enddate
+            EndDateDropDown.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Enddate"));
+
+            //Select day
+            Days.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Selectday"));
+
+            //Storing the starttime
+            StartTime.Click();
+
+            //Enter Starttime
+            StartTimeDropDown.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Starttime"));
+
+            //Enter Endtime
+            EndTimeDropDown.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Endtime"));
+
+            //Select Skill Trade
+            SkillTradeOption.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Skilltrade"));
+
+            //Enter Skill Exchange
+            SkillExchange.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Skill-Exchange"));
+
+            //Select Active 
+            ActiveOption.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Active"));
+
+            //Click on Save button 
+            Save.Click();
+
         }
 
         internal void EditShareSkill()
         {
 
         }
+
+        
     }
 }

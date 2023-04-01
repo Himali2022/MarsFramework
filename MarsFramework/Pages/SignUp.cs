@@ -49,6 +49,7 @@ namespace MarsFramework.Pages
         {
             //Populate the excel data
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "SignUp");
+
             //Click on Join button
             Join.Click();
 
@@ -65,14 +66,13 @@ namespace MarsFramework.Pages
             Password.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Password"));
 
             //Enter Password again to confirm
-            ConfirmPassword.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "ConfirmPswd"));
+            ConfirmPassword.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "ConfirmPassword"));
 
             //Click on Checkbox
             Checkbox.Click();
 
             //Click on join button to Sign Up
             JoinBtn.Click();
-
 
         }
     }

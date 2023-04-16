@@ -4,7 +4,7 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace MarsFramework.Pages
 {
-    class SignUp
+    public class SignUp
     {
         public SignUp()
         {
@@ -45,7 +45,7 @@ namespace MarsFramework.Pages
         private IWebElement JoinBtn { get; set; }
         #endregion
 
-        internal void register()
+        public void register()
         {
             //Populate the excel data
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "SignUp");
@@ -54,18 +54,23 @@ namespace MarsFramework.Pages
             Join.Click();
 
             //Enter FirstName
+            FirstName.Click();
             FirstName.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "FirstName"));
 
             //Enter LastName
+            LastName.Click();
             LastName.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "LastName"));
 
             //Enter Email
+            Email.Click();
             Email.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Email"));
 
             //Enter Password
+            Password.Click();
             Password.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Password"));
 
             //Enter Password again to confirm
+            ConfirmPassword.Click();
             ConfirmPassword.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "ConfirmPassword"));
 
             //Click on Checkbox

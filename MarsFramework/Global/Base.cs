@@ -6,10 +6,11 @@ using OpenQA.Selenium.Firefox;
 using RelevantCodes.ExtentReports;
 using System;
 using static MarsFramework.Global.GlobalDefinitions;
+using static MarsFramework.Global.GlobalDefinitions.ExcelLib;
 
 namespace MarsFramework.Global
 {
-    class Base
+    public class Base
     {
         #region To access Path from resource file
 
@@ -26,7 +27,7 @@ namespace MarsFramework.Global
 
         #region setup and tear down
         [SetUp]
-        public void Inititalize()
+        public void Initialise()
         {
 
             switch (Browser)

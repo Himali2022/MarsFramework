@@ -7,7 +7,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1CC741FF-012B-4180-AAED-68A98B97E06E}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MarsFramework</RootNamespace>
     <AssemblyName>MarsFramework</AssemblyName>
@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoItX3.Assembly, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a646454c8d475470, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoItX.Dotnet.3.3.14.5\lib\AutoItX3.Assembly.dll</HintPath>
@@ -46,9 +49,6 @@
     </Reference>
     <Reference Include="DnsClient, Version=1.6.1.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
       <HintPath>..\packages\DnsClient.1.6.1\lib\net471\DnsClient.dll</HintPath>
-    </Reference>
-    <Reference Include="Excel, Version=2.1.2.3, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\ExcelDataReader.2.1.2.3\lib\net45\Excel.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.9.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.9.0\lib\Net45\HtmlAgilityPack.dll</HintPath>
@@ -208,6 +208,7 @@
     </Compile>
     <Compile Include="Global\Base.cs" />
     <Compile Include="Global\GlobalDefinitions.cs" />
+    <Compile Include="Global\IExcelDataReader.cs" />
     <Compile Include="Pages\ManageListings.cs" />
     <Compile Include="Pages\ShareSkill.cs" />
     <Compile Include="Pages\SignIn.cs" />

@@ -4,7 +4,7 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace MarsFramework.Pages
 {
-    internal class ManageListings
+    public class ManageListings
     {
         public ManageListings()
         {
@@ -31,7 +31,7 @@ namespace MarsFramework.Pages
         [FindsBy(How = How.XPath, Using = "//div[@class='actions']")]
         private IWebElement clickActionsButton { get; set; }
 
-        internal void Listings()
+        public void Listings()
         {
             //Populate the Excel Sheet
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "ManageListings");

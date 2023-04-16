@@ -3,10 +3,12 @@ using NUnit.Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
+using static MarsFramework.Global.GlobalDefinitions;
 
 namespace MarsFramework.Pages
 {
-    class SignIn
+    public class SignIn
     {
         public SignIn()
         {
@@ -32,19 +34,28 @@ namespace MarsFramework.Pages
 
         #endregion
 
-        internal void LoginSteps()
+        public void LoginSteps()
         {
             //Populate the Excel Sheet
             GlobalDefinitions.ExcelLib.PopulateInCollection(Base.ExcelPath, "SignIn");
-                   
+
+            driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
+
+            //launch Mars page
+            driver.Navigate().GoToUrl("http://localhost:5000/");
+            driver.Navigate().GoToUrl(ExcelLib.ReadData(2, "Url"));
+
             //Click on Sign In button
             SignIntab.Click();
 
             //Enter Email
-            Email.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Email"));
+            Email.Click();
+            Email.SendKeys(ExcelLib.ReadData(2, "Email"));
 
             //Enter Password
-            Password.SendKeys(GlobalDefinitions.ExcelLib.ReadData(2, "Password"));
+            Password.Click();
+            Password.SendKeys(ExcelLib.ReadData(2, "Password"));
 
             //Click on Login button to Sign In
             LoginBtn.Click();

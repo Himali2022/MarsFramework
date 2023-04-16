@@ -25,7 +25,7 @@ namespace MarsFramework
 
                 //Enter New Share Skill steps
                 ShareSkill shareSkillObj = new ShareSkill();
-                shareSkillObj.EnterShareSkillSteps();
+                shareSkillObj.CreateShareSkill();
 
             }
             #endregion

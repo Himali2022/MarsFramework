@@ -70,7 +70,7 @@ namespace MarsFramework.Config {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to your path.
+        ///   Looks up a localized string similar to &quot;C:\Users\himal\Competition Task\Mars Framework\MarsFramework\ExcelData\Test data Share Skill.xlsx&quot;.
         /// </summary>
         internal static string ExcelPath {
             get {
@@ -88,7 +88,7 @@ namespace MarsFramework.Config {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to your path.
+        ///   Looks up a localized string similar to &quot;C:\Users\himal\Competition Task\Mars Framework\MarsFramework\Config\MarsResource.resx&quot;.
         /// </summary>
         internal static string ReportPath {
             get {
@@ -97,7 +97,7 @@ namespace MarsFramework.Config {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to your path.
+        ///   Looks up a localized string similar to C:\Users\himal\Competition Task\Mars Framework\MarsFramework\Config\XMLFile.xml.
         /// </summary>
         internal static string ReportXMLPath {
             get {
@@ -106,7 +106,7 @@ namespace MarsFramework.Config {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to your path.
+        ///   Looks up a localized string similar to &quot;C:\Users\himal\Competition Task\Mars Framework\MarsFramework\TestReports\Screenshots&quot;.
         /// </summary>
         internal static string ScreenShotPath {
             get {

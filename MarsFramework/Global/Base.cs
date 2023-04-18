@@ -6,10 +6,11 @@ using OpenQA.Selenium.Firefox;
 using RelevantCodes.ExtentReports;
 using System;
 using static MarsFramework.Global.GlobalDefinitions;
+using static MarsFramework.Global.GlobalDefinitions.ExcelLib;
 
 namespace MarsFramework.Global
 {
-    class Base
+    public class Base
     {
         #region To access Path from resource file
 
@@ -26,7 +27,7 @@ namespace MarsFramework.Global
 
         #region setup and tear down
         [SetUp]
-        public void Inititalize()
+        public void Initialise()
         {
 
             switch (Browser)
@@ -67,7 +68,7 @@ namespace MarsFramework.Global
         public void TearDown()
         {
             // Screenshot
-            String img = SaveScreenShotClass.SaveScreenshot(GlobalDefinitions.driver, "Report");//AddScreenCapture(@"E:\Dropbox\VisualStudio\Projects\Beehive\TestReports\ScreenShots\");
+            String img = SaveScreenShotClass.SaveScreenshot(GlobalDefinitions.driver, "Report"); //Add screen capture (@"C:\Users\himal\Competition Task\Mars Framework\MarsFramework\TestReports\Screenshots");
             test.Log(LogStatus.Info, "Image example: " + img);
             // end test. (Reports)
             extent.EndTest(test);

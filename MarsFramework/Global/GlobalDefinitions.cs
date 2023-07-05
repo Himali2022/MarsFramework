@@ -35,6 +35,8 @@ namespace MarsFramework.Global
         {
             static List<Datacollection> dataCol = new List<Datacollection>();
 
+            public static object ExcelReaderFactory { get; private set; }
+
             public class Datacollection
             {
                 public int rowNumber { get; set; }

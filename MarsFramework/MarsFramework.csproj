@@ -210,6 +210,7 @@
     <Compile Include="Global\GlobalDefinitions.cs" />
     <Compile Include="Global\IExcelDataReader.cs" />
     <Compile Include="Pages\ManageListings.cs" />
+    <Compile Include="Pages\selectElement.cs" />
     <Compile Include="Pages\ShareSkill.cs" />
     <Compile Include="Pages\SignIn.cs" />
     <Compile Include="Pages\SignUp.cs" />

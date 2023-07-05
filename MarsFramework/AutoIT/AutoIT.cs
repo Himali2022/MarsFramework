@@ -13,16 +13,18 @@ namespace MarsFramework.AutoIT
     {
         public static void Test() 
         {
-          //System.setProperty("webdriver.chrome.driver",@"C:\Users\himal\Competition Task\Mars Framework\MarsFramework\chromedriver_linux64");
-          //WebDriver driver = new ChromeDriver();
+            {
+                //System.setProperty("webdriver.chrome.driver", @"C:\Users\himal\Competition Task\Mars Framework\MarsFramework\chromedriver_linux64");
+                //WebDriver driver = new ChromeDriver();
 
-          //driver.get("http://localhost:5000/Home/ServiceListing");
-         // driver.findElement(By.XPath("/i[@class=\"search link icon\"]"));
-            Click();
+                //driver.get("http://localhost:5000/Home/ServiceListing");
+                //driver.findElement(By.XPath("/i[@class=\"search link icon\"]"));
+                Click();
 
-         // System.Runtime.getRuntime().exec("\"D:\\File Upload.exe\"");
-            Thread.Sleep(3000);
-         // driver.close();
+                //System.Runtime.getRuntime().exec("\"D:\\File Upload.exe\"");
+                Thread.Sleep(3000);
+                //driver.close();
+            }
 
         }
 

@@ -4,6 +4,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
+using System.Threading;
 using static MarsFramework.Global.GlobalDefinitions;
 
 namespace MarsFramework.Pages
@@ -44,6 +45,7 @@ namespace MarsFramework.Pages
 
             //launch Mars page
             driver.Navigate().GoToUrl("http://localhost:5000/");
+            Thread.Sleep(5000);
             driver.Navigate().GoToUrl(ExcelLib.ReadData(2, "Url"));
 
             //Click on Sign In button
@@ -60,6 +62,11 @@ namespace MarsFramework.Pages
             //Click on Login button to Sign In
             LoginBtn.Click();
         }
-             
+
+        public void CloseDriver()
+        {
+            driver.Close();
+        }
+
     }
 }

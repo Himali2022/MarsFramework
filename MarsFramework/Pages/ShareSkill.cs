@@ -2,6 +2,7 @@
 using NUnit.Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Security.Policy;
 
@@ -10,6 +11,8 @@ namespace MarsFramework.Pages
 {
     public class ShareSkill
     {
+        private object driver;
+
         public ShareSkill()
         {
             PageFactory.InitElements(Global.GlobalDefinitions.driver, this);
@@ -114,7 +117,7 @@ namespace MarsFramework.Pages
 
             //Select Category
             CategoryDropDown.Click();
-            selectElement SelectCategory = new selectElement(CategoryDropDown);
+            SelectElement SelectCategory = new selectElement(CategoryDropDown);
             SelectCategory.SelectByText(GlobalDefinitions.ExcelLib.ReadData(2, "Category"));
 
             //Select Sub Category
@@ -169,7 +172,23 @@ namespace MarsFramework.Pages
             throw new NotImplementedException();
         }
 
-        public void EditShareSkill()
+        public string GetAddedTitle()
+        {
+            IWebElement addedTitle = driver.FindElement(By.XPath("//input[@name='title']"));
+            return addedTitle.Text;
+        }
+        public string GetAddedDescription()
+        {
+            IWebElement addedDescription = driver.FindElement(By.XPath("//textarea[@name='description']"));
+            return addedDescription.Text;
+        }
+        public string GetAddedCategory()
+        {
+            IWebElement addedCategory = driver.FindElement(By.XPath("//select[@name='categoryId']"));
+            return addedCategory.Text;
+        }
+
+               public void EditShareSkill()
         {
 
         }

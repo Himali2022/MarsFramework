@@ -1,6 +1,8 @@
-﻿using MarsFramework.Global;
+﻿using MarsFramework.Auti_IT;
+using MarsFramework.Global;
 using NUnit.Core;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -11,7 +13,8 @@ namespace MarsFramework.Pages
 {
     public class ShareSkill
     {
-        private object driver;
+        //private object driver;
+        IWebDriver driver = new ChromeDriver();
 
         public ShareSkill()
         {

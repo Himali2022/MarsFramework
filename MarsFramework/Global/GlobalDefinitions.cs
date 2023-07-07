@@ -35,7 +35,7 @@ namespace MarsFramework.Global
         {
             static List<Datacollection> dataCol = new List<Datacollection>();
 
-            public static object ExcelReaderFactory { get; private set; }
+            //public static object ExcelReaderFactory { get; private set; }
 
             public class Datacollection
             {
@@ -58,10 +58,19 @@ namespace MarsFramework.Global
                 {
                     using (IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream))
                     {
-                        excelReader.IsFirstRowAsColumnNames = true;
+
+                        var result = excelReader.AsDataSet(new ExcelDataSetConfiguration()
+                        {
+                            ConfigureDataTable = (_) => new ExcelDataTableConfiguration()
+                            {
+                                UseHeaderRow = true
+                            }
+                        });
+
+                        //excelReader.IsFirstRowAsColumnNames = true;
 
                         //Return as dataset
-                        DataSet result = excelReader.AsDataSet();
+                        //DataSet result = excelReader.AsDataSet();
                         //Get all the tables
                         DataTableCollection table = result.Tables;
 
